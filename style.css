@@ -1,0 +1,170 @@
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial';
+}
+
+.container {
+    height: 100vh;
+    /* background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url("background.jpg"); */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 1px 1px 1px #000, 
+    3px 3px 5px rgb(0, 0, 0);
+    color: #fff;
+}
+.notice {
+  padding: 20px;
+  top: 0;
+  z-index: 10;
+  position: absolute;
+  background: rgb(102, 122, 230);
+  color: #fff;
+  width: 100%;
+}
+
+.notice button {
+  padding: 8px;
+  border: none;
+  border-radius: 0;
+  margin: 0 2px;
+}
+
+.icon {
+  background: black;
+}
+.bg-red {
+  background: rgb(202, 84, 75);
+  color: #fff;
+}
+.bg-green {
+background: rgb(80, 196, 80);
+color: #fff;
+}
+
+
+/* Loading */
+
+/* .lds-hourglass {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-hourglass:after {
+  content: " ";
+  display: block;
+  border-radius: 50%;
+  width: 0;
+  height: 0;
+  margin: 8px;
+  box-sizing: border-box;
+  border: 32px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  animation: lds-hourglass 1.2s infinite;
+}
+@keyframes lds-hourglass {
+  0% {
+    transform: rotate(0);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  50% {
+    transform: rotate(900deg);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  100% {
+    transform: rotate(1800deg);
+  }
+} */
+
+@keyframes load {
+  0% {
+    transform: translateY(50%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.container #location {
+  font-size: 80px;
+}
+
+.container #date {
+  font-size: 20px;
+}
+
+.container #temperatureSection {
+  font-size: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.container #icon {
+  border-radius: 50%;
+  margin-bottom: -15px;
+}
+
+.container #temperatureSection:hover {
+  color: #ebebeb;
+  transform: translateY(-10px);
+}
+
+
+/* Mobile */
+
+@media only screen and (max-width: 600px) {
+  .container #location {
+    font-size: 50px;
+  }
+  .container #date {
+    font-size: 18px;
+  }
+  .container #temperatureSection {
+    font-size: 60px;
+  }
+  .container #temperatureSection:hover {
+    transform: translateY(0);
+  }
+}
+
+
+
+
+
+/* Dual Ring */
+.lds-dual-ring {
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 46px;
+  height: 46px;
+  margin: 1px;
+  border-radius: 50%;
+  border: 5px solid #cef;
+  border-color: #cef transparent #cef transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

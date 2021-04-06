@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tired of searching weather conditions? We provide you the fastest way to check the Weather.">
+    <meta name="author" content="Jerry Di Eugenio">
+    <meta name="keywords" content="Weather, Application, Weather Application, Web Application, API, Developer, GitHub, Personal, Website, HTML, CSS, JavaScript">
+    <title>Weatheria</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="main.js"></script>
+</head>
+<body>
+    <div class="notice">
+            <small>Note: This app needed to access your location to automatically define the weather. It is assured that no data is being saved as this is only a front-end application.</small>
+        <button class="bg-green" id="allowBtn">Allow Location Access</button> <button class="bg-red">Leave</button>
+    </div>
+    <div class="container" id="background">
+        <div class="lds-dual-ring" id="loading"></div>
+        <h1 id="location"></h1>
+        <p id="date"></p>
+        <div id="temperatureSection">
+            <h1 id="temperature"></h1>
+            <span id="scale"></span>
+        </div>
+        <img id="icon" width="50px" height="50px">
+        <h2 id="weatherCondition"></h2>
+        <h3 id="tempRange"></h3>
+    </div>
+    
+</body>
+</html>
