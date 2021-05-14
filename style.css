@@ -4,11 +4,14 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Arial';
+  
 }
 
 .container {
     height: 100vh;
+    /* url(//unsplash.it/900) */
     /* background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url("background.jpg"); */
+    background: #123 url(//unsplash.it/900);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -16,8 +19,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-shadow: 1px 1px 1px #000, 
-    3px 3px 5px rgb(0, 0, 0);
+    text-shadow: 1.5px 1px 1px rgb(36, 36, 36),
+    2px 2px 5px rgb(0, 0, 0);
     color: #fff;
 }
 .notice {
@@ -25,7 +28,7 @@
   top: 0;
   z-index: 10;
   position: absolute;
-  background: rgb(102, 122, 230);
+  background: #667ae6;
   color: #fff;
   width: 100%;
 }
@@ -37,9 +40,11 @@
   margin: 0 2px;
 }
 
-.icon {
-  background: black;
+.notice-message {
+  margin: 80px 0;
+  font-size: 50px;
 }
+
 .bg-red {
   background: rgb(202, 84, 75);
   color: #fff;
@@ -112,8 +117,11 @@ color: #fff;
 }
 
 .container #icon {
-  border-radius: 50%;
+
   margin-bottom: -15px;
+  background: rgba(204, 238, 255, 0);
+  outline: none;
+  border: none;
 }
 
 .container #temperatureSection:hover {
@@ -137,6 +145,11 @@ color: #fff;
   .container #temperatureSection:hover {
     transform: translateY(0);
   }
+
+  .notice-message {
+    margin: 80px 0;
+    font-size: 20px;
+  }
 }
 
 
@@ -146,18 +159,18 @@ color: #fff;
 /* Dual Ring */
 .lds-dual-ring {
   display: inline-block;
-  width: 64px;
-  height: 64px;
+  width: 150px;
+  height: 150px;
 }
 .lds-dual-ring:after {
   content: " ";
   display: block;
-  width: 46px;
-  height: 46px;
+  width: 150px;
+  height: 150px;
   margin: 1px;
   border-radius: 50%;
-  border: 5px solid #cef;
-  border-color: #cef transparent #cef transparent;
+  border: 5px solid #fff;
+  border-color: #fff transparent #fff transparent;
   animation: lds-dual-ring 1.2s linear infinite;
 }
 @keyframes lds-dual-ring {

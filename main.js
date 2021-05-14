@@ -4,46 +4,34 @@ const api = {
     units: "metric"
 }
 
-const getCssValuePrefix = async () => {
-    let prefix = '';
-    let prefixList = ['-o-', '-ms-', '-moz-', '-webkit-'];
-
-    let dom = document.createElement('div');
-
-    for(let i = 0; i < prefixList.length; i++) {
-        dom.style.background = prefixList[i] + ' linear-gradient(#000000, #ffffff)';
-        if (dom.style.background)
-        {
-            prefix = prefixList[i];
-        }
-    }
-    dom = null;
-    delete dom;
-    console.log(prefix)
-};
-
-
-let background = document.querySelector('#background');
-//sunny day
-background.style.backgroundImage = `linear-gradient(rgba(114, 113, 81, 0.5),rgba(0, 0, 0, 0.5)),url("background.jpg")`;
-// bgbg.style.backgroundImage = `${getCssValuePrefix()} linear-gradient(rgba(114, 113, 81, 0.5),rgba(0, 0, 0, 0.5)),url("background.jpg")`;
 
 
 
 
 const getLocation = async () => {
-    if(navigator.geolocation) {
-         navigator.geolocation.getCurrentPosition(getWeather);
-    } else {
+    if(!navigator.geolocation) {
         console.log("Geolocation is not supported.");
-        // document.querySelector(".container").style.display="none";
-
+        alert("Geolocation is not supported.");
     }
+    navigator.geolocation.getCurrentPosition(getWeather);
 
-
-    document.querySelector("#loading").style.display="none";
+    
 
 };
+
+(function() {
+    navigator.permissions.query({name:'geolocation'}).then(function(result) {
+        // Will return ['granted', 'prompt', 'denied']
+        console.log(result.state);
+        if(result.state == "granted") {
+            document.querySelector(".notice").style.display="none";
+            getLocation();
+        } else {
+            document.querySelector(".notice").style.display="block";
+        }
+      });
+ 
+ })();
 
 
 const getWeather = async (position) => {
@@ -88,8 +76,9 @@ const getWeather = async (position) => {
     });
 
     temperature.innerText = `${Math.round(weather.main.temp)}`;
-
-    
+    document.querySelector("#loading").style.display="none";
+    document.querySelector(".notice-message").style.display="none";
+    document.querySelector(".notice").style.display="none";
 
 };
 
@@ -117,7 +106,13 @@ const getDate = () => {
 
 
 
+let allowBtn = document.querySelector("#allowBtn");
+let leaveBtn = document.querySelector("#leaveBtn");
 
+allowBtn.addEventListener("click", getLocation);
+leaveBtn.addEventListener("click", () => {
+    window.close();
+});
 
 
 // const changeWeatherTheme = (background) => {
@@ -138,7 +133,7 @@ const getDate = () => {
 
 
 
-window.addEventListener("load", getLocation);
+// window.addEventListener("load", getLocation);
 
 
 

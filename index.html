@@ -14,9 +14,10 @@
 <body>
     <div class="notice">
             <small>Note: This app needed to access your location to automatically define the weather. It is assured that no data is being saved as this is only a front-end application.</small>
-        <button class="bg-green" id="allowBtn">Allow Location Access</button> <button class="bg-red">Leave</button>
+        <button class="bg-green" id="allowBtn">Allow Location Access</button> <button class="bg-red" id="leaveBtn">Leave</button>
     </div>
     <div class="container" id="background">
+        <h1 class="notice-message">Please allow permission to continue...</h1>
         <div class="lds-dual-ring" id="loading"></div>
         <h1 id="location"></h1>
         <p id="date"></p>
@@ -24,10 +25,9 @@
             <h1 id="temperature"></h1>
             <span id="scale"></span>
         </div>
-        <img id="icon" width="50px" height="50px">
+        <img src="http://upload.wikimedia.org/wikipedia/commons/c/ce/Transparent.gif" id="icon" width="50px" height="50px">
         <h2 id="weatherCondition"></h2>
         <h3 id="tempRange"></h3>
     </div>
-    
 </body>
 </html>
